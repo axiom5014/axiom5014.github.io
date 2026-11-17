@@ -1,0 +1,1098 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>www.eeuss.com-站点导航与资源索引</title>
+<meta name="description" content="www.eeuss.com 是一个面向中文用户的资源导航与信息索引站点，整理分类入口、更新记录与使用说明，帮助访客快速找到所需栏目与常见问题解答。">
+<meta name="keywords" content="www.eeuss.com">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f3d5c'/%3E%3Cpath d='M18 44V20h10c6 0 9 3 9 8s-3 8-9 8h-5v8z' fill='%23f4b942'/%3E%3Ccircle cx='45' cy='24' r='5' fill='%23e8f1f6'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#0f3d5c;
+  --brand-2:#155e7e;
+  --accent:#f4b942;
+  --accent-soft:#fdf1d6;
+  --ink:#16232c;
+  --ink-2:#41526040;
+  --muted:#5b6b76;
+  --line:#dbe4ea;
+  --bg:#f6f9fb;
+  --card:#ffffff;
+  --ok:#2f7d5d;
+  --warn:#a9561d;
+  --radius:12px;
+  --radius-sm:8px;
+  --shadow:0 2px 10px rgba(15,61,92,.08);
+  --shadow-lg:0 8px 26px rgba(15,61,92,.12);
+  --fs-h1:clamp(1.6rem,3.4vw,2.5rem);
+  --fs-h2:clamp(1.2rem,2.1vw,1.55rem);
+  --fs-h3:1.05rem;
+  --space:clamp(14px,2.4vw,22px);
+  --sticky-h:96px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--sticky-h) + 12px)}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.75;font-size:16px;-webkit-text-size-adjust:100%}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{margin:0 0 .5em;line-height:1.35;font-weight:700;letter-spacing:.2px}
+p{margin:0 0 .9em}
+ul,ol{margin:0 0 .9em;padding-left:1.35em}
+li{margin:.28em 0}
+img{max-width:100%;display:block}
+button{font-family:inherit}
+
+/* ---------- 吸顶区 ---------- */
+.sticky-wrap{position:sticky;top:0;z-index:60}
+.notice{background:var(--brand);color:#eaf3f8;font-size:.86rem;padding:7px 0}
+.notice .wrap{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.notice b{color:var(--accent);font-weight:700}
+.notice .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.site-header{background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(15,61,92,.04)}
+.header-inner{display:flex;align-items:center;gap:16px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-text .logo-word{font-weight:800;font-size:1.02rem;color:var(--brand);letter-spacing:.2px}
+.brand-text .logo-sub{font-size:.7rem;color:var(--muted);letter-spacing:1px}
+.main-nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+.main-nav a{padding:7px 10px;border-radius:var(--radius-sm);font-size:.92rem;color:var(--ink)}
+.main-nav a:hover{background:var(--accent-soft);text-decoration:none}
+.header-tools{display:flex;align-items:center;gap:8px;flex:none}
+.search-box{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:3px 4px 3px 12px;background:#fff;transition:border-color .2s}
+.search-box:focus-within{border-color:var(--brand-2);box-shadow:0 0 0 3px rgba(21,94,126,.12)}
+.search-box input{border:0;outline:0;font-size:.88rem;width:130px;padding:5px 0;background:transparent;color:var(--ink)}
+.search-box button{border:0;background:var(--brand);color:#fff;border-radius:999px;padding:5px 11px;font-size:.82rem;cursor:pointer}
+.search-box button:hover{background:var(--brand-2)}
+.menu-toggle{display:none;border:1px solid var(--line);background:#fff;border-radius:var(--radius-sm);padding:8px 10px;cursor:pointer;color:var(--brand)}
+.menu-toggle svg{display:block}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+
+/* ---------- 首屏 ---------- */
+.hero{position:relative;background:
+  radial-gradient(1100px 420px at 82% -12%,rgba(244,185,66,.22),transparent 62%),
+  linear-gradient(160deg,#0f3d5c 0%,#124d6e 46%,#0c3249 100%);
+  color:#eef6fa;overflow:hidden}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(18px,3vw,44px);align-items:center;padding:clamp(30px,5vw,62px) 0}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;letter-spacing:1.4px;color:#cfe6f1;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:4px 12px;margin-bottom:14px}
+.hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.hero h1{font-size:var(--fs-h1);color:#fff;margin-bottom:12px;letter-spacing:.3px}
+.hero-lead{font-size:1rem;color:#d7e9f2;max-width:52ch;margin-bottom:18px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-size:.9rem;font-weight:600;transition:transform .18s ease,background .18s ease;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:#3a2a05}
+.btn-primary:hover{background:#ffc95e;transform:translateY(-2px);text-decoration:none}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#eaf5fb}
+.btn-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);text-decoration:none}
+.hero-stats{display:flex;flex-wrap:wrap;gap:18px 30px;padding-top:16px;border-top:1px solid rgba(255,255,255,.16)}
+.hero-stats div{min-width:88px}
+.hero-stats strong{display:block;font-size:1.3rem;color:var(--accent);line-height:1.2}
+.hero-stats span{font-size:.78rem;color:#bcd6e3;letter-spacing:.6px}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:400px;justify-self:center;width:100%}
+.hero-art svg{width:100%;height:100%}
+
+/* ---------- 通用板块 ---------- */
+.section{padding:clamp(26px,4vw,44px) 0}
+.section + .section{padding-top:0}
+.section-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.section-head h2{font-size:var(--fs-h2);color:var(--brand);margin:0}
+.section-head .sub{font-size:.84rem;color:var(--muted)}
+.section-head .line{flex:1;height:1px;background:var(--line);min-width:30px}
+.sec-note{font-size:.82rem;color:var(--muted);margin:-6px 0 14px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.pad{padding:clamp(14px,2vw,20px)}
+
+.grid{display:grid;gap:var(--space)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.asym{grid-template-columns:1.35fr .65fr}
+
+/* 概览卡 */
+.overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--space)}
+.ov-item{padding:16px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;border-left:4px solid var(--brand-2)}
+.ov-item h3{font-size:.98rem;margin-bottom:6px;color:var(--brand)}
+.ov-item p{font-size:.88rem;color:var(--muted);margin:0}
+
+/* 精选卡 */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--space)}
+.feat{display:flex;flex-direction:column;overflow:hidden}
+.feat .thumb{aspect-ratio:16/9;background:#e3edf3}
+.feat .thumb img{width:100%;height:100%;object-fit:cover}
+.feat .body{padding:14px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.feat h3{font-size:1rem;margin:0}
+.feat p{font-size:.86rem;color:var(--muted);margin:0;flex:1}
+.meta{font-size:.76rem;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;letter-spacing:.3px}
+.tag{display:inline-block;font-size:.74rem;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:#7a520a;font-weight:600}
+
+/* 紧凑列表 */
+.tight-list{list-style:none;padding:0;margin:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.tight-list li{display:flex;gap:12px;align-items:baseline;padding:11px 16px;border-bottom:1px solid var(--line);margin:0}
+.tight-list li:last-child{border-bottom:0}
+.tight-list .date{font-variant-numeric:tabular-nums;color:var(--brand-2);font-weight:600;font-size:.8rem;flex:none;width:74px}
+.tight-list .t{font-size:.92rem}
+.tight-list .t small{display:block;color:var(--muted);font-size:.8rem;margin-top:2px;font-weight:400}
+
+/* 分类入口标签索引 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.cat{display:block;padding:13px 14px;border-radius:var(--radius);border:1px solid var(--line);background:#fff;transition:transform .16s ease,border-color .16s ease}
+.cat:hover{transform:translateY(-2px);border-color:var(--brand-2);text-decoration:none}
+.cat strong{display:block;font-size:.93rem;color:var(--brand);margin-bottom:2px}
+.cat span{font-size:.78rem;color:var(--muted)}
+
+/* 深度解析 */
+.article-body{max-width:none}
+.article-body .lead{font-size:1.02rem;color:#26363f}
+.article-body h3{font-size:var(--fs-h3);color:var(--brand);margin-top:1.4em;padding-left:12px;border-left:4px solid var(--accent)}
+.article-body blockquote{margin:1.2em 0;padding:12px 18px;background:var(--accent-soft);border-radius:var(--radius-sm);color:#5a3f0c;font-size:.94rem}
+.callout{border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;background:#fff;margin:1em 0}
+.callout h4{margin:0 0 8px;font-size:.94rem;color:var(--brand-2)}
+.compare{width:100%;border-collapse:collapse;font-size:.86rem;margin:.6em 0;background:#fff}
+.compare th,.compare td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.compare th{background:#eef4f8;color:var(--brand);font-weight:600;white-space:nowrap}
+.compare td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* 时间线 */
+.timeline{list-style:none;padding:0;margin:0;position:relative}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 16px 32px;margin:0}
+.timeline li::before{content:"";position:absolute;left:3px;top:7px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--brand-2)}
+.timeline time{display:block;font-size:.78rem;color:var(--brand-2);font-weight:700;font-variant-numeric:tabular-nums}
+.timeline p{margin:2px 0 0;font-size:.9rem}
+
+/* 步骤 */
+.steps{counter-reset:step;list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.steps li{counter-increment:step;position:relative;padding:14px 16px 14px 54px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.steps li::before{content:counter(step);position:absolute;left:14px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;font-size:.84rem;display:grid;place-items:center}
+.steps h4{margin:0 0 3px;font-size:.95rem;color:var(--brand)}
+.steps p{margin:0;font-size:.87rem;color:var(--muted)}
+
+/* FAQ */
+details{border:1px solid var(--line);border-radius:var(--radius-sm);background:#fff;margin-bottom:10px;overflow:hidden}
+details[open]{border-color:var(--brand-2)}
+summary{cursor:pointer;padding:12px 42px 12px 16px;font-weight:600;font-size:.94rem;list-style:none;position:relative;color:var(--ink)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--brand-2);font-size:1.2rem;font-weight:400}
+details[open] summary::after{content:"–"}
+summary:focus-visible{outline:2px solid var(--brand-2);outline-offset:-2px}
+.faq-body{padding:0 16px 14px;font-size:.9rem;color:#33454f}
+
+/* 评论 */
+.comment{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.comment:last-child{border-bottom:0}
+.avatar{width:38px;height:38px;border-radius:50%;flex:none;display:grid;place-items:center;font-weight:700;color:#fff;font-size:.9rem}
+.comment .c-body{font-size:.9rem}
+.comment .who{font-size:.82rem;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:baseline}
+.comment .who b{color:var(--brand);font-size:.88rem}
+.comment p{margin:3px 0 0}
+.stars{color:var(--accent);letter-spacing:1px;font-size:.8rem}
+
+/* 相关资讯 */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--space)}
+.news{display:flex;gap:12px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+.news .nd{flex:none;width:52px;height:52px;border-radius:var(--radius-sm);background:var(--brand);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;line-height:1}
+.news .nd b{font-size:1.15rem;font-variant-numeric:tabular-nums}
+.news .nd span{font-size:.66rem;opacity:.85;margin-top:3px}
+.news h3{font-size:.92rem;margin:0 0 3px}
+.news p{font-size:.82rem;color:var(--muted);margin:0}
+
+/* 标签推荐 */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px}
+.tag-cloud a{padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:.85rem;color:var(--brand)}
+.tag-cloud a:hover{background:var(--brand);color:#fff;border-color:var(--brand);text-decoration:none}
+
+/* 榜单 */
+.rank{list-style:none;padding:0;margin:0;counter-reset:r}
+.rank li{display:flex;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px dashed var(--line);margin:0}
+.rank li:last-child{border-bottom:0}
+.rank li::before{counter-increment:r;content:counter(r);flex:none;width:22px;height:22px;border-radius:6px;background:#eef4f8;color:var(--brand);font-weight:700;font-size:.78rem;display:grid;place-items:center}
+.rank .rt{flex:1;font-size:.9rem}
+.rank .rv{font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* 侧栏 */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:clamp(18px,3vw,34px);align-items:start}
+.side{position:sticky;top:calc(var(--sticky-h) + 16px);display:grid;gap:16px}
+.side-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.side-card h3{font-size:.92rem;color:var(--brand);margin-bottom:10px}
+.side-nav{list-style:none;padding:0;margin:0;display:grid;gap:2px}
+.side-nav a{display:block;padding:6px 10px;border-radius:var(--radius-sm);font-size:.86rem;color:var(--ink);border-left:3px solid transparent}
+.side-nav a:hover{background:#f1f6f9;text-decoration:none}
+.side-nav a.active{background:var(--accent-soft);color:#6b4708;font-weight:600;border-left-color:var(--accent)}
+.mini-list{list-style:none;padding:0;margin:0;font-size:.85rem}
+.mini-list li{padding:6px 0;border-bottom:1px dashed var(--line)}
+.mini-list li:last-child{border-bottom:0}
+.mini-list .mm{color:var(--muted);font-size:.76rem}
+
+/* 页尾 */
+.site-footer{background:#0c2c40;color:#c3d8e4;padding:clamp(28px,4vw,46px) 0 20px;margin-top:clamp(30px,5vw,60px)}
+.foot-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:26px}
+.foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.foot-brand svg{width:34px;height:34px}
+.foot-brand b{color:#fff;font-size:1rem}
+.foot-desc{font-size:.85rem;color:#a9c3d2;max-width:34ch;margin-bottom:10px}
+.foot-grid h4{color:#fff;font-size:.88rem;margin-bottom:10px;letter-spacing:.5px}
+.foot-grid ul{list-style:none;padding:0;margin:0;font-size:.84rem}
+.foot-grid li{margin:5px 0}
+.foot-grid a{color:#b9d2e0}
+.foot-grid a:hover{color:var(--accent)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:24px;padding-top:14px;display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;font-size:.78rem;color:#8fadbe}
+
+/* 回到顶部 */
+#toTop{position:fixed;right:18px;bottom:18px;z-index:70;width:44px;height:44px;border-radius:50%;border:0;background:var(--brand);color:#fff;box-shadow:var(--shadow-lg);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .22s,transform .22s,visibility .22s;display:grid;place-items:center}
+#toTop.show{opacity:1;visibility:visible;transform:translateY(0)}
+#toTop:hover{background:var(--brand-2)}
+#toTop:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.search-feedback{margin-top:8px;font-size:.84rem;color:var(--warn);display:none}
+.search-feedback.show{display:block}
+mark.hl{background:var(--accent-soft);color:#5a3f0c;border-radius:3px}
+
+:focus-visible{outline:2px solid var(--brand-2);outline-offset:2px}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1000px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{max-width:300px;justify-self:start;order:2}
+  .asym{grid-template-columns:1fr}
+  .layout{grid-template-columns:1fr}
+  .side{position:static;order:2}
+  .foot-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:820px){
+  :root{--sticky-h:104px}
+  .g3,.g4{grid-template-columns:repeat(2,1fr)}
+  .menu-toggle{display:inline-flex}
+  .main-nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:8px 16px 14px;gap:2px;box-shadow:var(--shadow-lg)}
+  .main-nav.open{display:flex}
+  .main-nav a{padding:10px 8px;border-radius:var(--radius-sm)}
+  .header-inner{position:relative;flex-wrap:wrap}
+  .search-box input{width:100px}
+}
+@media (max-width:620px){
+  .g3,.g4,.g2{grid-template-columns:1fr}
+  .header-inner{gap:8px}
+  .search-box{order:3;width:100%;margin-top:6px}
+  .search-box input{width:100%;flex:1}
+  .search-box{display:none}
+  .search-box.mobile-open{display:flex}
+  .header-tools{margin-left:auto}
+  .foot-grid{grid-template-columns:1fr}
+  .hero-stats{gap:14px 22px}
+  .tight-list .date{width:auto}
+  .tight-list li{flex-wrap:wrap;gap:2px 10px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto !important;transition:none !important;animation:none !important}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-wrap">
+  <div class="notice" role="region" aria-label="站点公告">
+    <div class="wrap">
+      <span class="dot" aria-hidden="true"></span>
+      <span><b>www.eeuss.com</b> 公告：11月6日完成栏目结构调整，“资源索引”合并至“分类入口”，旧链接已重定向；11月2日新增使用说明第5条。</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/#top" aria-label="www.eeuss.com 首页">
+        <svg viewBox="0 0 64 64" role="img" aria-label="站点图形标志">
+          <rect width="64" height="64" rx="14" fill="#0f3d5c"/>
+          <path d="M18 44V20h10c6 0 9 3 9 8s-3 8-9 8h-5v8z" fill="#f4b942"/>
+          <circle cx="45" cy="24" r="5" fill="#e8f1f6"/>
+          <rect x="40" y="34" width="10" height="10" rx="2" fill="#e8f1f6" opacity=".7"/>
+        </svg>
+        <span class="brand-text">
+          <span class="logo-word">www.eeuss.com</span>
+          <span class="logo-sub">导航 · 索引 · 说明</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+
+      <div class="header-tools">
+        <form class="search-box" id="searchForm" role="search" aria-label="站内查找">
+          <input type="search" id="searchInput" placeholder="查找栏目或条目" aria-label="输入关键词查找">
+          <button type="submit">查找</button>
+        </form>
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="展开导航菜单">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="hero-tag"><span class="dot" aria-hidden="true"></span> 2026 年 11 月更新 · 索引维护中</span>
+        <h1 id="heroTitle">www.eeuss.com</h1>
+        <p class="hero-lead">一个把分散栏目收拢到同一处的资源导航站：按主题分类、按时间记录更新、按问题整理说明。访客从顶部导航进入频道，或直接查看下方的最新条目与索引变动，减少在多个入口之间反复跳转。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/#categories">进入分类入口</a>
+          <a class="btn btn-ghost" href="/#updates">查看今日更新</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>11</strong><span>主题频道</span></div>
+          <div><strong>38</strong><span>本周收录条目</span></div>
+          <div><strong>7</strong><span>常见问题</span></div>
+          <div><strong>11/08</strong><span>索引更新日</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" role="img" aria-label="索引网络示意图">
+          <defs>
+            <linearGradient id="gg1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f4b942" stop-opacity=".9"/>
+              <stop offset="1" stop-color="#f4b942" stop-opacity=".25"/>
+            </linearGradient>
+          </defs>
+          <circle cx="200" cy="200" r="150" fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="110" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.5" stroke-dasharray="4 7"/>
+          <circle cx="200" cy="200" r="66" fill="none" stroke="#ffffff" stroke-opacity=".3" stroke-width="1.5"/>
+          <g stroke="url(#gg1)" stroke-width="1.6" opacity=".95">
+            <line x1="200" y1="200" x2="200" y2="52"/>
+            <line x1="200" y1="200" x2="318" y2="128"/>
+            <line x1="200" y1="200" x2="330" y2="256"/>
+            <line x1="200" y1="200" x2="236" y2="342"/>
+            <line x1="200" y1="200" x2="92" y2="300"/>
+            <line x1="200" y1="200" x2="74" y2="150"/>
+            <line x1="200" y1="200" x2="150" y2="70"/>
+          </g>
+          <g fill="#f4b942">
+            <circle cx="200" cy="52" r="7"/><circle cx="318" cy="128" r="6"/><circle cx="330" cy="256" r="7"/>
+            <circle cx="236" cy="342" r="6"/><circle cx="92" cy="300" r="7"/><circle cx="74" cy="150" r="6"/>
+            <circle cx="150" cy="70" r="5"/>
+          </g>
+          <circle cx="200" cy="200" r="26" fill="#0f3d5c" stroke="#f4b942" stroke-width="2.5"/>
+          <path d="M188 210v-20h8c5 0 8 2.5 8 6.5s-3 6.5-8 6.5h-4v7z" fill="#f4b942"/>
+          <circle cx="212" cy="192" r="3.6" fill="#e8f1f6"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="layout">
+
+      <!-- 主内容列 -->
+      <div class="main-col">
+
+        <!-- 1. 领域概览 -->
+        <section class="section" id="overview" aria-labelledby="h-overview">
+          <div class="section-head">
+            <h2 id="h-overview">领域概览：资源导航站做什么</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">4 个基础认知点</span>
+          </div>
+          <div class="overview">
+            <div class="ov-item">
+              <h3>资源索引入口</h3>
+              <p>按主题、格式、更新频率三个维度建立索引，每个入口标注首次收录时间与最近校对日期。</p>
+            </div>
+            <div class="ov-item">
+              <h3>栏目更新记录</h3>
+              <p>每日记录新增、合并、下线条目。11月6日合并“资源索引”与“分类入口”，涉及 14 条旧链接重定向。</p>
+            </div>
+            <div class="ov-item">
+              <h3>使用说明文档</h3>
+              <p>包含搜索方法、筛选规则、失效反馈流程。说明文档与条目列表分开维护，避免互相覆盖。</p>
+            </div>
+            <div class="ov-item">
+              <h3>条目可信度分层</h3>
+              <p>三级分层：已校对、待复核、来源标注。第三级只保留出处链接与收录日期，不做二次判断。</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. 精选内容推荐 -->
+        <section class="section" id="featured" aria-labelledby="h-featured">
+          <div class="section-head">
+            <h2 id="h-featured">精选内容推荐</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">本周编辑挑选 4 条</span>
+          </div>
+          <div class="feat-grid">
+            <article class="card feat">
+              <div class="thumb"><img src="https://picsum.photos/seed/eeuss-index-01/640/360" width="640" height="360" loading="lazy" alt="分类索引页面截图，展示主题标签与条目数量"></div>
+              <div class="body">
+                <span class="tag">分类入口</span>
+                <h3>主题频道如何按标签筛选</h3>
+                <p>从 11 个频道中按标签组合筛选，支持“主题 + 更新时间”双条件，结果附收录日期。</p>
+                <div class="meta"><span>更新于 11-07</span><span>阅读 3 步</span></div>
+              </div>
+            </article>
+            <article class="card feat">
+              <div class="thumb"><img src="https://picsum.photos/seed/eeuss-index-02/640/360" width="640" height="360" loading="lazy" alt="条目卡片列表，每张卡片带有日期标签"></div>
+              <div class="body">
+                <span class="tag">条目管理</span>
+                <h3>条目失效后的反馈与重定向</h3>
+                <p>反馈入口只在条目详情中开放；已下线条目会在 48 小时内标注替代入口，历史记录保留 90 天。</p>
+                <div class="meta"><span>更新于 11-05</span><span>流程 4 步</span></div>
+              </div>
+            </article>
+            <article class="card feat">
+              <div class="thumb"><img src="https://picsum.photos/seed/eeuss-index-03/640/360" width="640" height="360" loading="lazy" alt="站点说明文档页面，标题与编号列表"></div>
+              <div class="body">
+                <span class="tag">使用说明</span>
+                <h3>站内搜索的关键词写法</h3>
+                <p>支持中文分词与栏目名匹配；输入两个以上词按“与”处理，结果为空时回退到分类列表。</p>
+                <div class="meta"><span>更新于 11-03</span><span>示例 6 组</span></div>
+              </div>
+            </article>
+            <article class="card feat">
+              <div class="thumb"><img src="https://picsum.photos/seed/eeuss-index-04/640/360" width="640" height="360" loading="lazy" alt="可信度分层对照表，三列颜色区分"></div>
+              <div class="body">
+                <span class="tag">可信度分层</span>
+                <h3>三级条目标注的判定方法</h3>
+                <p>已校对要求双人复核；待复核只保留单一来源；来源标注附原始链接，不参与排序加权。</p>
+                <div class="meta"><span>更新于 11-02</span><span>对照 3 级</span></div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 3. 最新更新 -->
+        <section class="section" id="updates" aria-labelledby="h-updates">
+          <div class="section-head">
+            <h2 id="h-updates">最新更新</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">11 月 1 日至 11 月 8 日</span>
+          </div>
+          <p class="sec-note">以下为条目与栏目层面的实际变动，按日期倒序排列，同一事件不在此处重复描述。</p>
+          <ul class="tight-list">
+            <li><span class="date">11-08 今天</span><span class="t">索引校对第 41 轮完成<small>覆盖 11 个频道中的 9 个，剩余“工具说明”“历史栏目”待复核。</small></span></li>
+            <li><span class="date">11-07</span><span class="t">新增“条目筛选组合”说明页<small>给出 6 组关键词组合示例，含“主题 + 日期”与“标签 + 状态”两种写法。</small></span></li>
+            <li><span class="date">11-06</span><span class="t">合并“资源索引”与“分类入口”<small>合并后保留 14 条重定向，旧入口在本月内仍可访问。</small></span></li>
+            <li><span class="date">11-05</span><span class="t">失效反馈流程缩短至 48 小时<small>原先承诺 72 小时，调整依据是 10 月共处理 27 条反馈的中位数 1.6 天。</small></span></li>
+            <li><span class="date">11-03</span><span class="t">站内搜索加入中文分词<small>“资源索引”与“索引资源”现在返回同一组结果，共 38 条。</small></span></li>
+            <li><span class="date">11-01</span><span class="t">上线可信度分层标注<small>已校对 126 条、待复核 43 条、来源标注 19 条，合计 188 条。</small></span></li>
+          </ul>
+        </section>
+
+        <!-- 4. 分类入口 -->
+        <section class="section" id="categories" aria-labelledby="h-categories">
+          <div class="section-head">
+            <h2 id="h-categories">分类入口</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">11 个主题频道</span>
+          </div>
+          <div class="cat-grid">
+            <a class="cat" href="/#featured"><strong>主题资源索引</strong><span>按主题聚合的入口列表</span></a>
+            <a class="cat" href="/#updates"><strong>每日更新记录</strong><span>条目增删与合并日志</span></a>
+            <a class="cat" href="/#deep"><strong>深度解析</strong><span>可核对的判断与对照</span></a>
+            <a class="cat" href="/#guide"><strong>新手使用指南</strong><span>从搜索到反馈的 5 步</span></a>
+            <a class="cat" href="/#faq"><strong>常见问题解答</strong><span>7 个高频疑问</span></a>
+            <a class="cat" href="/#comments"><strong>用户评论摘录</strong><span>8 条带评分留言</span></a>
+            <a class="cat" href="/#news"><strong>相关资讯</strong><span>栏目层面动态 3 条</span></a>
+            <a class="cat" href="/#rank"><strong>本周热门条目</strong><span>按查阅次数排序</span></a>
+            <a class="cat" href="/#tags"><strong>标签索引</strong><span>按标签直达条目</span></a>
+            <a class="cat" href="/#timeline"><strong>时间线</strong><span>10 月至今节点</span></a>
+            <a class="cat" href="/#trust"><strong>可信度说明</strong><span>三级标注规则</span></a>
+          </div>
+        </section>
+
+        <!-- 5. 深度解析 -->
+        <section class="section" id="deep" aria-labelledby="h-deep">
+          <div class="section-head">
+            <h2 id="h-deep">深度解析：导航站的价值在“更新”还是“覆盖”</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">一个可被反驳的判断</span>
+          </div>
+          <article class="card pad article-body">
+            <p class="lead">先把判断说清楚：对一个以索引为核心的导航站来说，条目数量的边际收益在超过 150 条后明显下降，而更新频率与失效处理的稳定性，对回访用户的影响更大。这个判断可以被反驳——如果访客主要来自外部搜索且只来一次，覆盖面仍然决定首次点击能否被满足。</p>
+
+            <h3>判断一：188 条条目中，真正被反复访问的是 41 条</h3>
+            <p>按 10 月 8 日至 11 月 7 日的查阅记录统计，188 条在册条目里，累计查阅超过 5 次的只有 41 条，占 21.8%；另有 63 条在 30 天内零查阅。与之对照，11 月 5 日把反馈处理时长从 72 小时压到 48 小时后，同一周内重复访问次数从 214 次升到 261 次，涨幅 22%。这两个数字放在一起，说明维护动作与访问行为的关联比条目扩张更直接。</p>
+
+            <div class="callout">
+              <h4>可核对结构：两组对照</h4>
+              <table class="compare">
+                <thead><tr><th>观察项</th><th>数据</th><th>统计区间</th></tr></thead>
+                <tbody>
+                  <tr><td>在册条目总数</td><td class="num">188 条</td><td>截至 11-01</td></tr>
+                  <tr><td>30 天内零查阅</td><td class="num">63 条（33.5%）</td><td>10-08 至 11-07</td></tr>
+                  <tr><td>查阅超 5 次</td><td class="num">41 条（21.8%）</td><td>10-08 至 11-07</td></tr>
+                  <tr><td>反馈时长调整前后</td><td class="num">重复访问 214 → 261 次</td><td>11-01 至 11-07</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>判断二：栏目合并是覆盖面的减法，但降低了错误率</h3>
+            <p>11 月 6 日把“资源索引”并入“分类入口”，频道数从 12 降到 11，旧链接 14 条。合并当天的反馈里有 3 条明确表示“找不到原来的入口”，说明覆盖确实变窄。但另一组数据是：合并前一个月，跨两个栏目的重复条目被记录 9 次，合并后一周内为 0 次。同一内容出现在两个位置，会让人对“哪个是正式入口”产生犹豫，这种犹豫比少一个入口更消耗耐心。</p>
+
+            <h3>判断三：可信度分层对排序几乎无效，对排查有效</h3>
+            <p>三级标注上线一周后，已校对 126 条、待复核 43 条、来源标注 19 条。从查阅分布看，三级条目的点击占比依次是 68%、24%、8%，与数量占比 67%、23%、10% 基本吻合，说明标注本身没有改变用户选择。它真正起作用的位置在反馈处理：带“来源标注”的条目被质疑时，处理人可以直接回到原始出处，10 月 27 日至 11 月 6 日共 11 条反馈，平均处理时间 1.4 天，比未标注条目快 0.9 天。</p>
+
+            <blockquote>可以把上述判断反过来读：如果目标是让新访客在 30 秒内找到内容，那么扩条目、加频道仍然有效；如果目标是让老访客每周回来一次，先修失效与反馈流程更划算。两种路径并不互斥，但维护精力有限时，需要选一边先做。</blockquote>
+
+            <h3>反例与边界</h3>
+            <p>有一类情况会推翻“更新优先”的说法：当某个主题在站内只有 2 条条目时，更新再勤也无法覆盖需求，此时覆盖是硬约束。10 月 19 日“工具说明”频道只有 2 条，用户反馈集中在“内容太少”，那周的重复访问几乎没有增长；11 月 2 日补到 7 条后，该频道的查阅次数才从 9 次升到 34 次。所以更准确的说法是：覆盖存在一个下限，越过下限后，更新与维护的权重上升。</p>
+          </article>
+        </section>
+
+        <!-- 6. 体验指南 -->
+        <section class="section" id="guide" aria-labelledby="h-guide">
+          <div class="section-head">
+            <h2 id="h-guide">体验指南</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">从进入到反馈的 5 步</span>
+          </div>
+          <ol class="steps">
+            <li>
+              <h4>先看频道，再用搜索</h4>
+              <p>11 个频道按主题划分。不确定落在哪个频道时，直接输入两个以内的名词，搜索会匹配频道名与条目标题。</p>
+            </li>
+            <li>
+              <h4>用标签缩小范围</h4>
+              <p>条目详情页底部有标签，点选后回到分类入口，结果自动带上标签条件。标签不超过 2 个，多于 2 个时结果通常为 0。</p>
+            </li>
+            <li>
+              <h4>核对收录日期</h4>
+              <p>每条都标注首次收录日与最近校对日。两个日期相差超过 30 天的，说明该条未参与最近一轮校对，需自行确认。</p>
+            </li>
+            <li>
+              <h4>遇到失效走反馈</h4>
+              <p>反馈只在条目详情中开放，需填写条目编号与现象描述。11 月 5 日起承诺 48 小时内标注替代入口或下线原因。</p>
+            </li>
+            <li>
+              <h4>查看处理结果</h4>
+              <p>反馈处理后会在更新记录里留下日期与条目编号。11 月 1 日至 11 月 7 日共处理 9 条，其中 6 条给出替代入口。</p>
+            </li>
+          </ol>
+        </section>
+
+        <!-- 7. FAQ -->
+        <section class="section" id="faq" aria-labelledby="h-faq">
+          <div class="section-head">
+            <h2 id="h-faq">常见问题</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">7 个高频疑问</span>
+          </div>
+
+          <details>
+            <summary>主题资源索引里的条目多久校对一次？</summary>
+            <div class="faq-body">每轮校对覆盖全部 11 个频道中的 8 至 10 个，间隔约 7 天。11 月 8 日完成第 41 轮，剩余“工具说明”“历史栏目”两个频道排在第 42 轮，计划 11 月 11 日进行。条目详情页的“最近校对日”显示该条实际被检查的日期，不是整轮开始日。</div>
+          </details>
+
+          <details>
+            <summary>站内搜索为什么有时返回空结果？</summary>
+            <div class="faq-body">搜索按“与”处理多个词，两个词分别匹配不到同一批条目时结果为空。11 月 3 日加入中文分词后，“资源索引”和“索引资源”已能返回同一组 38 条结果，但“索引 反馈 时长”这类三词组合仍可能为空。空结果时页面会给出分类入口列表，可作为退路。</div>
+          </details>
+
+          <details>
+            <summary>“已校对”和“待复核”有什么区别？</summary>
+            <div class="faq-body">已校对要求两名维护者先后检查，并记录两次检查日期；待复核只经过一人检查，或检查人与收录人为同一人。两者的差别在于出错概率：11 月 1 日至 7 日，待复核条目收到质疑 4 条，已校对条目收到 2 条。质疑数量都不多，但处理时前者更依赖原始出处。</div>
+          </details>
+
+          <details>
+            <summary>反馈提交后多久能看到处理结果？</summary>
+            <div class="faq-body">11 月 5 日起承诺 48 小时内给出结果。结果分三种：标注替代入口、标注下线并写明原因、维持原状并附说明。10 月共处理 27 条反馈，中位处理时长 1.6 天；11 月 1 日至 7 日处理 9 条，中位 1.2 天。超时未处理的条目会在更新记录里单独列出。</div>
+          </details>
+
+          <details>
+            <summary>标签最多可以叠加几个？</summary>
+            <div class="faq-body">建议 2 个以内。标签库里共 26 个标签，单个标签覆盖最多的有 31 条，最少的有 3 条。叠加到 3 个时，多数组合的结果为 0，原因是条目本身的标签数不超过 3 个，交叠后难有交集。分类入口页面在叠加后显示“结果数”，为 0 时给出相邻标签建议。</div>
+          </details>
+
+          <details>
+            <summary>本周热门条目是怎么排序的？</summary>
+            <div class="faq-body">按 7 天内的条目详情查阅次数排序，不按点击外链计算，也不做加权。统计区间为 11 月 1 日至 11 月 7 日，排第一的“条目筛选组合说明”为 96 次，第十为 21 次。排序每日凌晨更新一次，页面显示的是前一天结束时的快照。</div>
+          </details>
+
+          <details>
+            <summary>为什么有些条目只写来源、没有摘要？</summary>
+            <div class="faq-body">这类条目属于“来源标注”层，共 19 条，收录时只记录原始出处、收录日期与一句原文位置描述，不做二次概括。这样做的原因是概括容易引入偏差，尤其当原始材料本身存在版本差异时。需要摘要的条目会在校对后补入，补入日期记在条目末尾。</div>
+          </details>
+        </section>
+
+        <!-- 8. 用户评论 -->
+        <section class="section" id="comments" aria-labelledby="h-comments">
+          <div class="section-head">
+            <h2 id="h-comments">用户评论摘录</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">8 条，含中性与批评</span>
+          </div>
+          <div class="card pad">
+
+            <div class="comment">
+              <div class="avatar" style="background:#155e7e">陈</div>
+              <div class="c-body">
+                <div class="who"><b>陈序</b><span>11-07</span><span class="stars">★★★★☆</span></div>
+                <p>“条目筛选组合说明”写得比预期细，6 组示例里第 4 组“标签 + 状态”的组合确实能用。少一星是因为示例只给了写法，没给预期结果数。</p>
+              </div>
+            </div>
+
+            <div class="comment">
+              <div class="avatar" style="background:#8a6b1f">林</div>
+              <div class="c-body">
+                <div class="who"><b>林间小路</b><span>11-06</span><span class="stars">★★★☆☆</span></div>
+                <p>合并栏目那天找了十分钟原来那个入口，最后是从更新记录里的重定向说明找回来的。能理解合并的理由，但重定向提示最好放在页面顶部，而不是折叠区。</p>
+              </div>
+            </div>
+
+            <div class="comment">
+              <div class="avatar" style="background:#2f7d5d">周</div>
+              <div class="c-body">
+                <div class="who"><b>周予安</b><span>11-05</span><span class="stars">★★★★★</span></div>
+                <p>反馈流程压到 48 小时之后，我提交的那条“工具说明”条目第二天就有回音，给了替代入口，还附了原条目下线日期 10 月 29 日。</p>
+              </div>
+            </div>
+
+            <div class="comment">
+              <div class="avatar" style="background:#a9561d">吴</div>
+              <div class="c-body">
+                <div class="who"><b>吴工</b><span>11-05</span><span class="stars">★★☆☆☆</span></div>
+                <p>“历史栏目”里有一半条目最近校对日还停在 10 月 12 日，跟“每轮校对 8 至 10 个频道”的说法对不上。要么把这两个频道明确标成低优先级，要么就别在概览里写那么满。</p>
+              </div>
+            </div>
+
+            <div class="comment">
+              <div class="avatar" style="background:#415260">赵</div>
+              <div class="c-body">
+                <div class="who"><b>赵一苇</b><span>11-04</span><span class="stars">★★★☆☆</span></div>
+                <p>可信度分层这个概念挺好，但“来源标注”那 19 条点进去只有出处和日期，没摘要，第一次看会以为是加载失败。加一行说明文字成本不高。</p>
+              </div>
+            </div>
+
+            <div class="comment">
+              <div class="avatar" style="background:#155e7e">何</div>
+              <div class="c-body">
+                <div class="who"><b>何以然</b><span>11-03</span><span class="stars">★★★★☆</span></div>
+                <p>分词上线后搜“索引资源”终于不是空了，之前一直以为站里没有。就是结果页没提示“已做分词匹配”，容易让人以为搜的是完全相同的词。</p>
+              </div>
+            </div>
+
+            <div class="comment">
+              <div class="avatar" style="background:#2f7d5d">孙</div>
+              <div class="c-body">
+                <div class="who"><b>孙牧之</b><span>11-02</span><span class="stars">★★★★☆</span></div>
+                <p>“新手使用指南”第 3 步讲收录日期和校对日期的差别，这一条解决了我的困惑。之前一直以为“收录日期”就是最后更新日期。</p>
+              </div>
+            </div>
+
+            <div class="comment">
+              <div class="avatar" style="background:#415260">郑</div>
+              <div class="c-body">
+                <div class="who"><b>郑迟</b><span>11-01</span><span class="stars">★★★☆☆</span></div>
+                <p>热门条目第十名只有 21 次查阅，跟第一名 96 次差得有点多。榜单只列 10 条会不会太少，第 11 到 20 名其实也有参考价值。</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 9. 相关资讯 -->
+        <section class="section" id="news" aria-labelledby="h-news">
+          <div class="section-head">
+            <h2 id="h-news">相关资讯</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">栏目层面的 3 条动态</span>
+          </div>
+          <div class="news-grid">
+            <article class="news">
+              <div class="nd"><b>06</b><span>11月</span></div>
+              <div>
+                <h3>栏目合并后的首日反馈</h3>
+                <p>14 条重定向全部生效，收到 3 条“找不到入口”的反馈，均已回复具体位置。</p>
+              </div>
+            </article>
+            <article class="news">
+              <div class="nd"><b>03</b><span>11月</span></div>
+              <div>
+                <h3>搜索分词上线的观察</h3>
+                <p>“索引资源”类倒序查询占比从 12% 降到 4%，空结果提示点击率升到 31%。</p>
+              </div>
+            </article>
+            <article class="news">
+              <div class="nd"><b>01</b><span>11月</span></div>
+              <div>
+                <h3>可信度分层覆盖 188 条</h3>
+                <p>已校对 126 条、待复核 43 条、来源标注 19 条；排序权重未作调整。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- 10. 相关推荐 -->
+        <section class="section" id="tags" aria-labelledby="h-tags">
+          <div class="section-head">
+            <h2 id="h-tags">相关推荐</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">按标签直达</span>
+          </div>
+          <div class="tag-cloud">
+            <a href="/#categories">主题资源索引</a>
+            <a href="/#updates">每日更新记录</a>
+            <a href="/#guide">新手使用指南</a>
+            <a href="/#faq">条目失效反馈</a>
+            <a href="/#deep">判断方法与对照</a>
+            <a href="/#trust">可信度分层规则</a>
+            <a href="/#rank">本周热门条目</a>
+            <a href="/#timeline">时间线</a>
+            <a href="/#comments">用户评论</a>
+            <a href="/#news">栏目动态</a>
+            <a href="/#overview">领域概览</a>
+          </div>
+        </section>
+
+        <!-- 11. 补充板块：榜单 + 时间线 + 可信度 -->
+        <section class="section" id="rank" aria-labelledby="h-rank">
+          <div class="section-head">
+            <h2 id="h-rank">本周热门条目</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">11-01 至 11-07 查阅次数</span>
+          </div>
+          <div class="grid g2">
+            <ol class="rank card pad">
+              <li><span class="rt">条目筛选组合说明</span><span class="rv">96 次</span></li>
+              <li><span class="rt">主题频道标签速查</span><span class="rv">83 次</span></li>
+              <li><span class="rt">失效反馈填写示例</span><span class="rv">71 次</span></li>
+              <li><span class="rt">收录日期与校对日期差别</span><span class="rv">65 次</span></li>
+              <li><span class="rt">三级标注判定方法</span><span class="rv">58 次</span></li>
+              <li><span class="rt">搜索关键词写法</span><span class="rv">47 次</span></li>
+              <li><span class="rt">栏目合并重定向说明</span><span class="rv">41 次</span></li>
+              <li><span class="rt">历史栏目清单</span><span class="rv">36 次</span></li>
+              <li><span class="rt">工具说明频道导览</span><span class="rv">28 次</span></li>
+              <li><span class="rt">反馈处理结果查询</span><span class="rv">21 次</span></li>
+            </ol>
+            <div class="card pad" id="trust">
+              <h3 style="font-size:1rem;color:var(--brand);margin-bottom:8px">可信度分层说明</h3>
+              <table class="compare">
+                <thead><tr><th>层级</th><th>数量</th><th>要求</th></tr></thead>
+                <tbody>
+                  <tr><td>已校对</td><td class="num">126</td><td>双人先后检查，记录两次日期</td></tr>
+                  <tr><td>待复核</td><td class="num">43</td><td>单人检查，或收录人自检</td></tr>
+                  <tr><td>来源标注</td><td class="num">19</td><td>只记出处、日期与原文位置</td></tr>
+                </tbody>
+              </table>
+              <p style="font-size:.84rem;color:var(--muted);margin:.7em 0 0">标注不参与排序加权。它的作用集中在反馈处理：带来源标注的条目可直接回原始出处核对，10 月 27 日至 11 月 6 日的 11 条反馈平均处理 1.4 天。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="timeline" aria-labelledby="h-timeline">
+          <div class="section-head">
+            <h2 id="h-timeline">时间线：10 月至今的关键节点</h2>
+            <span class="line" aria-hidden="true"></span>
+            <span class="sub">5 个节点</span>
+          </div>
+          <ol class="timeline card pad">
+            <li><time datetime="2026-10-19">10 月 19 日</time><p>“工具说明”频道仅 2 条，反馈集中在内容太少；该频道当周查阅 9 次。</p></li>
+            <li><time datetime="2026-10-27">10 月 27 日</time><p>首批带“来源标注”的条目收到反馈，进入按出处核对的流程。</p></li>
+            <li><time datetime="2026-11-01">11 月 1 日</time><p>可信度分层上线，188 条完成初次标注；排序权重不变。</p></li>
+            <li><time datetime="2026-11-03">11 月 3 日</time><p>搜索加入中文分词，倒序查询“索引资源”可返回 38 条。</p></li>
+            <li><time datetime="2026-11-06">11 月 6 日</time><p>“资源索引”并入“分类入口”，保留 14 条重定向，当月内有效。</p></li>
+          </ol>
+        </section>
+
+      </div><!-- /main-col -->
+
+      <!-- 侧栏 -->
+      <aside class="side" aria-label="侧栏辅助导航">
+        <div class="side-card">
+          <h3>页面导航</h3>
+          <ul class="side-nav" id="sideNav">
+            <li><a href="/#overview">领域概览</a></li>
+            <li><a href="/#featured">精选内容推荐</a></li>
+            <li><a href="/#updates">最新更新</a></li>
+            <li><a href="/#categories">分类入口</a></li>
+            <li><a href="/#deep">深度解析</a></li>
+            <li><a href="/#guide">体验指南</a></li>
+            <li><a href="/#faq">常见问题</a></li>
+            <li><a href="/#comments">用户评论摘录</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#rank">本周热门条目</a></li>
+            <li><a href="/#timeline">时间线</a></li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h3>条目状态速览</h3>
+          <ul class="mini-list">
+            <li>已校对 <b>126</b> 条 <span class="mm">双人复核</span></li>
+            <li>待复核 <b>43</b> 条 <span class="mm">单人检查</span></li>
+            <li>来源标注 <b>19</b> 条 <span class="mm">只记出处</span></li>
+            <li>30 天零查阅 <b>63</b> 条 <span class="mm">10-08 起</span></li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h3>快速反馈</h3>
+          <p style="font-size:.84rem;color:var(--muted);margin:0 0 8px">条目失效或内容有误，从条目详情页进入反馈，填写编号与现象。承诺 48 小时内给出处理结果。</p>
+          <a href="/#guide" style="font-size:.86rem;font-weight:600">查看反馈流程 →</a>
+        </div>
+      </aside>
+
+    </div><!-- /layout -->
+  </div><!-- /wrap -->
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 64 64" role="img" aria-label="页脚品牌标志">
+            <rect width="64" height="64" rx="14" fill="#155e7e"/>
+            <path d="M18 44V20h10c6 0 9 3 9 8s-3 8-9 8h-5v8z" fill="#f4b942"/>
+            <circle cx="45" cy="24" r="5" fill="#e8f1f6"/>
+          </svg>
+          <b>www.eeuss.com</b>
+        </div>
+        <p class="foot-desc">按主题归档入口、按日期记录变动，读的人能自己判断哪一条还值得点开。</p>
+        <p style="font-size:.8rem;color:#8fadbe;margin:0">内容更新时间：2026-11-08 · 对应“索引校对第 41 轮”与“栏目合并重定向”两项</p>
+      </div>
+      <div>
+        <h4>主题频道</h4>
+        <ul>
+          <li><a href="/#categories">主题资源索引</a></li>
+          <li><a href="/#updates">每日更新记录</a></li>
+          <li><a href="/#featured">精选内容推荐</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用与说明</h4>
+        <ul>
+          <li><a href="/#guide">新手使用指南</a></li>
+          <li><a href="/#faq">常见问题解答</a></li>
+          <li><a href="/#trust">可信度分层规则</a></li>
+          <li><a href="/#timeline">时间线</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>互动</h4>
+        <ul>
+          <li><a href="/#comments">用户评论摘录</a></li>
+          <li><a href="/#rank">本周热门条目</a></li>
+          <li><a href="/#tags">标签索引</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>示例数据说明：条目数量、查阅次数、反馈处理时长均为站点示例记录，仅用于说明栏目结构。</span>
+      <span>© 2026 www.eeuss.com</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到页面顶部" title="回到顶部">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 移动端菜单 */
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? '收起导航菜单' : '展开导航菜单');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A' && window.innerWidth <= 820){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','展开导航菜单');
+      }
+    });
+  }
+
+  /* 吸顶高度写入变量，保证锚点偏移 */
+  var sticky = document.querySelector('.sticky-wrap');
+  function syncSticky(){
+    if(!sticky) return;
+    var h = sticky.offsetHeight;
+    document.documentElement.style.setProperty('--sticky-h', h + 'px');
+  }
+  syncSticky();
+  window.addEventListener('resize', syncSticky, {passive:true});
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  function onScroll(){
+    if(window.scrollY > 420){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 侧栏滚动高亮 */
+  var sideLinks = Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var targets = sideLinks.map(function(a){
+    var id = a.getAttribute('href').split('#')[1];
+    return document.getElementById(id);
+  });
+  function highlight(){
+    var pos = window.scrollY + (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sticky-h'),10) || 96) + 40;
+    var current = -1;
+    targets.forEach(function(el, i){
+      if(el && el.offsetTop <= pos) current = i;
+    });
+    sideLinks.forEach(function(a, i){
+      a.classList.toggle('active', i === current);
+    });
+  }
+  window.addEventListener('scroll', highlight, {passive:true});
+  window.addEventListener('resize', highlight, {passive:true});
+  highlight();
+
+  /* 站内本地查找 */
+  var form = document.getElementById('searchForm');
+  var input = document.getElementById('searchInput');
+  var feedback = document.createElement('div');
+  feedback.className = 'search-feedback';
+  feedback.setAttribute('role','status');
+  feedback.setAttribute('aria-live','polite');
+  form.parentNode.insertBefore(feedback, form.nextSibling);
+
+  var blocks = Array.prototype.slice.call(document.querySelectorAll('main section, main .feat, main .news, main .comment, main .cat, main .ov-item, main .tight-list li, main details, main .rank li, main .timeline li'));
+
+  function clearHighlight(){
+    document.querySelectorAll('mark.hl').forEach(function(m){
+      var parent = m.parentNode;
+      parent.replaceChild(document.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+  }
+
+  function highlightNode(node, term){
+    var walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        if(!n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        if(n.parentNode && (n.parentNode.tagName === 'SCRIPT' || n.parentNode.tagName === 'STYLE' || n.parentNode.tagName === 'MARK')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [], n;
+    while((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function(textNode){
+      var text = textNode.nodeValue;
+      var idx = text.toLowerCase().indexOf(term.toLowerCase());
+      if(idx === -1) return;
+      var frag = document.createDocumentFragment();
+      var last = 0;
+      while(idx !== -1){
+        frag.appendChild(document.createTextNode(text.slice(last, idx)));
+        var mark = document.createElement('mark');
+        mark.className = 'hl';
+        mark.textContent = text.slice(idx, idx + term.length);
+        frag.appendChild(mark);
+        last = idx + term.length;
+        idx = text.toLowerCase().indexOf(term.toLowerCase(), last);
+      }
+      frag.appendChild(document.createTextNode(text.slice(last)));
+      textNode.parentNode.replaceChild(frag, textNode);
+    });
+  }
+
+  function doSearch(term){
+    clearHighlight();
+    term = (term || '').trim();
+    if(!term){
+      feedback.classList.remove('show');
+      return;
+    }
+    var hit = null;
+    blocks.forEach(function(b){
+      if(!hit && b.textContent.toLowerCase().indexOf(term.toLowerCase()) !== -1) hit = b;
+    });
+    if(hit){
+      feedback.classList.remove('show');
+      highlightNode(hit, term);
+      var top = hit.getBoundingClientRect().top + window.scrollY - (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sticky-h'),10) || 96) - 18;
+      window.scrollTo({top: Math.max(top, 0), behavior:'smooth'});
+    } else {
+      feedback.textContent = '没有找到与“' + term + '”匹配的栏目或条目，可试试“索引”“反馈”“分层”等短词，或从分类入口逐项查看。';
+      feedback.classList.add('show');
+    }
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    doSearch(input.value);
+  });
+
+  /* 移动端搜索展开：点击品牌区域外轻触时直接展示 */
+  var searchBox = form;
+  document.addEventListener('click', function(e){
+    if(window.innerWidth <= 620){
+      if(e.target === input || form.contains(e.target)) {
+        searchBox.classList.add('mobile-open');
+      }
+    }
+  });
+
+  /* 平滑滚动（为 JavaScript 关闭时仍可用 CSS scroll-behavior） */
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href^="/#"]') : null;
+    if(!a) return;
+    var id = a.getAttribute('href').split('#')[1];
+    if(!id) return;
+    var el = document.getElementById(id);
+    if(!el) return;
+    e.preventDefault();
+    var offset = (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sticky-h'),10) || 96) + 14;
+    var top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({top: Math.max(top, 0), behavior:'smooth'});
+    history.replaceState(null, '', '/#' + id);
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"www.eeuss.com",
+  "description":"面向中文用户的资源导航与信息索引站点，整理分类入口、更新记录与使用说明。",
+  "inLanguage":"zh-CN"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"主题资源索引里的条目多久校对一次？","acceptedAnswer":{"@type":"Answer","text":"每轮校对覆盖全部11个频道中的8至10个，间隔约7天。11月8日完成第41轮，剩余“工具说明”“历史栏目”两个频道排在第42轮，计划11月11日进行。"}},
+    {"@type":"Question","name":"站内搜索为什么有时返回空结果？","acceptedAnswer":{"@type":"Answer","text":"搜索按“与”处理多个词，两个词分别匹配不到同一批条目时结果为空。11月3日加入中文分词后，“资源索引”和“索引资源”已能返回同一组38条结果。"}},
+    {"@type":"Question","name":"“已校对”和“待复核”有什么区别？","acceptedAnswer":{"@type":"Answer","text":"已校对要求两名维护者先后检查并记录两次检查日期；待复核只经过一人检查，或检查人与收录人为同一人。11月1日至7日，待复核条目收到质疑4条，已校对条目收到2条。"}},
+    {"@type":"Question","name":"反馈提交后多久能看到处理结果？","acceptedAnswer":{"@type":"Answer","text":"11月5日起承诺48小时内给出结果，结果分为标注替代入口、标注下线并写明原因、维持原状并附说明三种。10月共处理27条反馈，中位处理时长1.6天。"}},
+    {"@type":"Question","name":"标签最多可以叠加几个？","acceptedAnswer":{"@type":"Answer","text":"建议2个以内。标签库共26个标签，单个标签覆盖最多的有31条，最少的有3条。叠加到3个时多数组合结果为0，页面会给出相邻标签建议。"}},
+    {"@type":"Question","name":"本周热门条目是怎么排序的？","acceptedAnswer":{"@type":"Answer","text":"按7天内的条目详情查阅次数排序，不按点击外链计算，也不做加权。统计区间为11月1日至7日，排第一的条目为96次，第十为21次，每日凌晨更新快照。"}},
+    {"@type":"Question","name":"为什么有些条目只写来源、没有摘要？","acceptedAnswer":{"@type":"Answer","text":"这类条目属于“来源标注”层，共19条，收录时只记录原始出处、收录日期与原文位置描述，不做二次概括，需要摘要的条目会在校对后补入。"}}
+  ]
+}
+</script>
+
+</body>
+  </html>
